@@ -1,0 +1,22 @@
+
+<h1>Listing teams</h1>
+
+<%= link_to 'New team', new_team_path %>
+
+<table>
+  <tr>
+    <th>name</th>
+    <th>Player one</th>
+    <th>Player two</th>
+    <th></th>
+  </tr>
+
+  <% @teams.each do |team| %>
+      <tr>
+        <td><%= team.name %></td>
+        <td><%= team.player_one %></td>
+        <td><%= team.player_two %></td>
+        <td><%= link_to 'Show', team_path(team) %></td>
+      </tr>
+  <% end %>
+</table>
